@@ -13,7 +13,7 @@ class InterfaceTexto {
     
     public InterfaceTexto() {
         entrada = new Scanner(System.in);
-        //triangulo = new Triangulo();
+        triangulo = new Triangulo();
     }
     
     public void executar() {
@@ -21,13 +21,10 @@ class InterfaceTexto {
         triangulo.setB(entrada.nextFloat());
         triangulo.setC(entrada.nextFloat());
         
-        
-        
-        if (triangulo.valor() == true) {
+        if (triangulo.valor()){
             System.out.printf("Perimetro = %.1f\n", triangulo.getPerimetro());
         }
-        
-        if (triangulo.valor() == false) {
+        else {
             System.out.printf("Area = %.1f\n", triangulo.getArea());
         }
     }
@@ -35,12 +32,6 @@ class InterfaceTexto {
 
 class Triangulo {
     private float a, b, c;
-    
-    Triangulo(float a, float b, float c){
-        setA(a);
-        setB(b);
-        setC(c);
-    }
     
     public void setA(float a) {
         this.a = a;
@@ -63,7 +54,6 @@ class Triangulo {
     }
     
     boolean valor() {
-        if ((a < b + c) && (b < a + c) && (c < b + a))  return true;
-        return false;
+        return ((a < b + c) && (b < a + c) && (c < b + a));
     }
 }
