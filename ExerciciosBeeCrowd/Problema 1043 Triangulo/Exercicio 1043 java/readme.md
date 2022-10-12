@@ -1,0 +1,1 @@
+The 1043 exercise of beecrowd, done with java 8 object-oriented
